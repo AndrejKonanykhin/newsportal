@@ -1,0 +1,212 @@
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  cursor: default;
+  font-size: 15px;
+}
+
+/* убираем подчеркивание у всех ссылок */
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* ссылка при наведении*/
+a:hover {
+  transition: 0.3s;
+}
+
+/* заголовок h1 */
+h1 {
+  color: #fff;
+  font-size: 4rem;
+}
+
+/* header */
+header {
+  height: 400px;
+  margin: 0;
+  padding: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  position: relative;
+  background: url("../images/josh-hild-sIxd5FR9Ugo-unsplash.jpg") bottom
+    center/cover no-repeat fixed;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* затемнение сверху header для лучшей видимости nav*/
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: -1;
+}
+
+/* nav */
+header nav {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 8px;
+  margin: 10px;
+  justify-content: end;
+}
+
+
+/* ссылкы навигации в header */
+header nav > a,
+footer .links > a {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+header nav > a {
+  margin: 0 10px;
+  padding: 0;
+  color: #bdbdbd;
+  position: relative;
+}
+
+header nav > a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transition: 0.3s;
+  background-color: #bdbdbd;
+}
+
+header nav > a:hover {
+  color: #fff;
+}
+
+header nav > a:hover::after {
+  width: 100%;
+  left: 0;
+  transition: 0.3s;
+  background-color: #fff;
+}
+
+/* main */
+main {
+  padding: 0 15px;
+  margin: 60px 0 80px;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+
+/* оформление секции новостей */
+.news {
+  background-color: #fff;
+  padding: 30px 0;
+  margin: 0 50px;
+}
+
+article {
+  width: 90%;
+  margin: 0 auto 10px;
+  padding: 5px 15px 15px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+article a {
+  color: #434343;
+}
+
+article a:hover {
+  color: #000;
+}
+
+article h2 {
+  position: relative;
+  margin-bottom: 10px;
+  display: inline;
+}
+
+/* автор и дата новости */
+.article-meta {
+  color: #8b8b8b;
+  margin: 4px 0 10px;
+  font-size: 13px;
+}
+
+/* изображение новости */
+article img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ярлык new для новостей, по умолчанию скрыт*/
+section article h2::before {
+  content: "New";
+  display: none;
+  position: absolute;
+  top: 7px;
+  right: -45px;
+  font-size: 12px;
+  background-color: #ff6b00;
+  color: #fff;
+  padding: 0 5px 2px;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* показ ярлыка new у первой и второй новости*/
+section:nth-of-type(1) article h2::before,
+section:nth-of-type(2) article h2::before {
+  display: block;
+}
+
+/* фон каждой второй новости */
+main section:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  background-color: #d0d1d3;
+  padding: 20px 20px 40px;
+  font-size: 13px;
+}
+
+/* навигация в footer */
+footer .links {
+  margin-bottom: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+footer .links > a {
+  color: #434343;
+  padding: 0 20px;
+}
+
+footer .links > a:hover {
+  color: #8b8b8b;
+}
+
+/* copyright */
+.copyright {
+  border: 3px double #8b8b8b;
+  display: inline;
+  padding: 5px 10px;
+}
